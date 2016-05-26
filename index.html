@@ -6,23 +6,59 @@
     <meta charset="UTF-8">
     <title></title>
 
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
-    <script type="text/javascript" charset="utf-8" src="./Modaal-0.2.11/dist/js/modaal.js"></script>
-    <link rel="stylesheet" href="./Modaal-0.2.11/dist/css/modaal.css">
+    <!-- Modaal -->
+    <script type="text/javascript" src="./Modaal-0.2.11/dist/js/modaal.js"></script>
+    <link rel="stylesheet" type="text/css" href="./Modaal-0.2.11/dist/css/modaal.css">
+
+    <!-- Chocoalat -->
+    <script type="text/javascript" src="./Chocolat/dist/js/jquery.chocolat.js"></script>
+    <link rel="stylesheet" type="text/css" href="./Chocolat/dist/css/chocolat.css">
 
   </head>
 
   <body>
 
+    <!-- Modaal -->
+
     <a href="#inline" class="inline">Show</a>
+
+    <a href="http://placehold.it/200x300" class="modaal-image">Image</a>
 
     <div id="inline" style="display:none;">
       Inline content goes here...
     </div>
 
-    <script>
-      jQuery('.inline').modaal();
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('.inline').modaal({
+        type: 'image'
+      });
+
+      $('.modaal-image').modaal({
+        type: 'image'
+      });
+    });
+    </script>
+
+
+
+    <!-- Chocoalat -->
+
+    <div id="example1" data-chocolat-title="Set title">
+      <a class="chocolat-image" href="http://placehold.it/200x300" title="image caption a">
+          A <!-- you can display a thumbnail here : <img src="thumb/a.jpg" /> -->
+      </a>
+      <a class="chocolat-image" href="http://placehold.it/200x300" title="image caption b">
+          B <!-- you can display a thumbnail here : <img src="thumb/b.jpg" /> -->
+      </a>
+    </div>
+
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function(){
+          $('#example1').Chocolat();
+      });
     </script>
 
   </body>
